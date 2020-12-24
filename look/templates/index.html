@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div{
+        outline: 2px solid black;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    {% for product in pro %}
+    <div class="">
+      <h1>{{product.name}}</h1>
+      <img src="{{product.image.url}}" alt="" width="100px" height="100px">
+      <p>₹{{product.price}}</p>
+      <button><a href="{% url 'cart_add' product.id %}">Add To Cart</a></button>
+    </div>
+    {% endfor %}
+  </body>
+</html>
